@@ -1,21 +1,20 @@
 import requests
 import json
 
-# live_response = requests.get("http://api.postcodes.io/postcodes/")
-# url = "http://api.postcodes.io/postcodes/"
-#
-# post_code = input(" please enter you postcode: ") # user is asked to to input their postcode
-# lr = requests.get(url + post_code) # postcode concatenated to the end of url
-# print(lr.content)
-#
-# lr_content_dict = json.loads(lr.content) # using the json module, lr_content is converted from bytes to a dictionary
-# print(type(lr_content_dict))
-#
-# print(lr_content_dict["result"]) # prints out the value corresponding to the key 'result' in the lr_content dictionary
-#
+url = "http://api.postcodes.io/postcodes/"
+
+post_code = input(" please enter you postcode: ") # user is asked to to input their postcode
+lr = requests.get(url + post_code) # postcode concatenated to the end of url
+print(lr.content)
+
+lr_content_dict = json.loads(lr.content) # using the json module, lr_content is converted from bytes to a dictionary
+print(type(lr_content_dict))
+
+print(lr_content_dict["result"]) # prints out the value corresponding to the key 'result' in the lr_content dictionary
+
 # longitude and latitude are keys within the value of result, so double indexing is required to get their values
-# print(lr_content_dict["result"]["longitude"])
-# print(lr_content_dict["result"]["latitude"])
+print(lr_content_dict["result"]["longitude"])
+print(lr_content_dict["result"]["latitude"])
 
 # functioning returning the longitude of a postcode passed in by the user
 def longitude(post_code):
