@@ -34,7 +34,26 @@ print(random())
 ```
 ## pip
 - pip is a package manager and used to install packages
+- installing a package using pip: ```pip install name_of_package```
 
 ## APIs
+- API calls are used:
+    - to find out if the web is live
+    - to meet user's expectations
+    
+- you can get status codes using:
+```
+import requests
 
+live_response = requests.get("https://www.bbc.co.uk/") # gives response code as an integer
 
+def check_response_code():
+    if live_response.status_code: # will evaluate to True if status code is between 200-400, otherwise False
+        print("Mission successful !!! " + str(live_response.status_code))
+    elif live_response.status_code == 404:
+        print("Sorry, the site is currently unavailable")
+    else:
+        print("oops, something went wrong. Please try again later")
+
+check_response_code()
+```
