@@ -57,3 +57,8 @@ def check_response_code():
 
 check_response_code()
 ```
+- apply CRUD
+    - Create
+    - Read
+    - Update
+    - Delete
