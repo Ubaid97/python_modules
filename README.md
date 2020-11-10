@@ -62,3 +62,55 @@ check_response_code()
     - Read
     - Update
     - Delete
+  
+## Json basics
+- Java script object notation
+- use cases - browser data
+- data is in key value pairs
+- Json encoding from a Dictionary
+- Jason decoding into a dictionary
+- handling/creating files with python
+- writing to a file
+- reading from a file    
+
+**file permissions**
+Syntax: ```open(file, mode)```
+
+|Mode | Description|
+|----|----|
+|'r'|This is the default mode. It Opens file for reading.|
+|'w'|This Mode Opens file for writing. If file does not exist, it creates a new file. If file exists it truncates the file.|
+|'x'|Creates a new file. If file already exists, the operation fails.|
+|'a'|Open file in append mode. If file does not exist, it creates a new file.|
+|'t'|This is the default mode. It opens in text mode.
+|'b'|This opens in binary mode.
+|'+'|This will open a file for reading and writing (updating)
+### Exception handling
+- ```try``` and ```except``` blocks
+- ```raise``` and ```finally```
+- We use these blocks when we expect an error or exception from the python interpreter
+
+**steps**
+- put the code which might throw an error into a try block:
+```python
+try:
+    code
+```
+- the except clause can be used to alias an error/exception and provide a customised message:
+```python
+except error as errmsg
+    print(customised error message)
+```
+- raise the exception using ```raise```
+- a ```finally``` clause can be used for code to be run regardless of the conditions specified in the try-except block
+- An example:
+```python
+# try block containing an attempt to open a file that doesn't exist - will throw a FileNotFoundError
+try:
+    file = open("orders.text")
+except FileNotFoundError as errmsg:
+    print("Please create a file first " + str(errmsg)) # prints error with a customised message
+    raise # raise sends back the actual exception
+finally: # finally will run regardless of the above conditions
+    print("Thank you, please visit us again")
+```
